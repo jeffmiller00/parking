@@ -1,0 +1,43 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Towed Vehicles in Chicago</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      div.jqcloud{font-family:"Helvetica","Arial",sans-serif;color:#09f;overflow:hidden;position:relative}div.jqcloud a{color:inherit;font-size:inherit;text-decoration:none}div.jqcloud a:hover{color:#0df}div.jqcloud a:hover{color:#0cf}div.jqcloud span{padding:0}div.jqcloud span.w10{font-size:54px;color:#0cf}div.jqcloud span.w9{font-size:50px;color:#0cf}div.jqcloud span.w8{font-size:44px;color:#0cf}div.jqcloud span.w7{font-size:40px;color:#39d}div.jqcloud span.w6{font-size:34px;color:#90c5f0}div.jqcloud span.w5{font-size:30px;color:#90a0dd}div.jqcloud span.w4{font-size:24px;color:#90c5f0}div.jqcloud span.w3{font-size:20px;color:#a0ddff}div.jqcloud span.w2{font-size:14px;color:#9ce}div.jqcloud span.w1{font-size:10px;color:#aab5f0}
+    </style>
+
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud-1.0.4.min.js'></script>
+    <script type="text/javascript">
+      var word_list = <%= @results %>;
+      $(document).ready(function() {
+        $("#towed_makes").jQCloud(word_list);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <h1 class="title">Vehicles that have been towed by the City of Chicago in the last 90 days</h1>
+      </header>
+    </div>
+
+    <div class="main-container">
+      <div class="main wrapper clearfix">
+      <div id="towed_makes" style="width: 100%; height: 350px; border: 1px solid #ccc;"></div>
+      <p>Don't be like one of these cars above...</p>
+      </div> <!-- #main -->
+    </div> <!-- #main-container -->
+
+    <div class="footer-container">
+      <footer class="wrapper">
+        <p>By <a href='https://about.me/jeffmiller00'>Jeff Miller</a> <a href="https://twitter.com/couchchamp" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @couchchamp</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+      </footer>
+    </div>
+  </body>
+</html>
